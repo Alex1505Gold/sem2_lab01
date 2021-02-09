@@ -204,9 +204,16 @@ std::ostream& operator<<(std::ostream& out, Lab_string& str)
 	return out;
 }
 
-/*
+
 std::istream& operator>>(std::istream& in, Lab_string& str)
 {
+	char* tmp = new char[1024];
+	in >> tmp;
 	
+	Lab_string str_tmp(tmp);
+	str = str_tmp;
+	
+	delete [] tmp;
+	
+	return in;
 }
-*/

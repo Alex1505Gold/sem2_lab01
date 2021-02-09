@@ -18,7 +18,10 @@ int main()
     std::cout << str0.length() << std::endl;
     str0 = str0 + str1;
     std::cout << str0 << std::endl;
-    std::cout << str0.find("de");
+    std::cout << str0.find("de") << std::endl;
+    Lab_string str2;
+    std::cin >> str2;
+    std::cout << str2 << std::endl;
     return 0;
 }
 

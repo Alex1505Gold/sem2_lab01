@@ -18,4 +18,4 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& out, Lab_string& str);
-//std::istream& operator>>(std::istream& in, Lab_string& str);
+std::istream& operator>>(std::istream& in, Lab_string& str);
