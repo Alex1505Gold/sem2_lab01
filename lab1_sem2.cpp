@@ -16,12 +16,8 @@ int main()
     if (str0 == str1) std::cout << 1 << std::endl;
     else std::cout << 2 << std::endl;
     std::cout << str0.length() << std::endl;
-    //std::cout << str0.find("cd");
-    
-    std::cout << str0 + str1;
-    Lab_string str2;
-    str2 = str0 + str1;
-    std::cout << str2;
+    str0 = str0 + str1;
+    std::cout << str0 << std::endl;
     std::cout << str0.find("de");
     return 0;
 }

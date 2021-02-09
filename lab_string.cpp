@@ -59,6 +59,13 @@ int Lab_string::find(const Lab_string& str)
 {
 	unsigned int i = 0;
 	unsigned int j = 0;
+	unsigned int size_sub = 0;
+	while (str.data[i] != '\0')
+	{
+		size_sub++;
+		i++;
+	}
+	i = 0;
 	bool if_find = false;
 	while (data[i] != '\0')
 	{
@@ -66,9 +73,9 @@ int Lab_string::find(const Lab_string& str)
 		{
 			unsigned int k = i;
 			if_find = true;
-			while (data[k] != '\0' && str.data[k] != '\0')
+			while (data[k] != '\0' && str.data[j] != '\0')
 			{
-				if (data[k] != str.data[j])
+				if (data[k] != str.data[j] && str.data[j] != '\0')
 				{
 					if_find = false;
 					j = 0;
