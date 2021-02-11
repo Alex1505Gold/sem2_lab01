@@ -127,7 +127,7 @@ Lab_string& Lab_string::operator+(const Lab_string& str)
 	{
 		j++;
 	}
-	std::cout << j << std::endl;
+	//std::cout << j << std::endl;
 	delete [] data;
 	data = new char[i + j + 1];
 	for (int k = 0; k < i; ++k)
@@ -207,13 +207,37 @@ std::ostream& operator<<(std::ostream& out, Lab_string& str)
 
 std::istream& operator>>(std::istream& in, Lab_string& str)
 {
-	char* tmp = new char[1024];
+	char* tmp = new char[2];
+	in.get(tmp[0]);
+	tmp[1] = '\0';
+	while (tmp[0] != '\0' && tmp[0] != ' ' && tmp[0] != '\n')
+	{
+		str = str + tmp;
+		in.get(tmp[0]);
+		tmp[1] = '\0';
+	}
+	delete[] tmp;
+	/*
+	char* tmp = new char[5];
 	in >> tmp;
 	
 	Lab_string str_tmp(tmp);
 	str = str_tmp;
 	
-	delete [] tmp;
+	char* space = new char[1];
+	space[0] = ' ';
+	while (str_tmp.find(space) != -1)
+	{
+		delete[] tmp;
+		char* tmp = new char[1024];
+		str_tmp.~Lab_string();
+		in >> tmp;
+		Lab_string str_tmp(tmp);
+		str = str + str_tmp;
+	}
+	delete [] space;
+	*/
+	//delete [] tmp;
 	
 	return in;
 }

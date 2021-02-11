@@ -22,6 +22,7 @@ int main()
     Lab_string str2;
     std::cin >> str2;
     std::cout << str2 << std::endl;
+    std::cout << str2.length() << std::endl;
     return 0;
 }
 
